@@ -6,3 +6,7 @@
 {"firstName":"John","lastName":"Carter","SIN":123456543,"Email":"sawg@gmail.ca","highSchoolGrade":80,"admissionTestScore":90,"campusLocation":"New Brunswick","programName":"Culinary Arts"}
 {"firstName":"dgfsdgf","lastName":"dsffvsdf","SIN":123456789,"Email":"s@gmail.ca","highSchoolGrade":60,"admissionTestScore":80,"campusLocation":"Newfoundland","programName":"Network Security"}
 {"firstName":"ss","lastName":"s","SIN":123456789,"Email":"s@gmail.ca","highSchoolGrade":80,"admissionTestScore":80,"campusLocation":"Prince Edward Island","programName":"Artificial Intelligence"}
+{"firstName":"John","lastName":"Doe","SIN":90123456,"Email":"john@gmail.com","highSchoolGrade":80,"admissionTestScore":80,"campusLocation":"Manitoba","programName":"Software Engineering"}
+{"firstName":"Brody","lastName":"Dentinger","SIN":123456777,"Email":"@bob@bob.ca","highSchoolGrade":80,"admissionTestScore":90,"campusLocation":"Manitoba","programName":"Environmental Science"}
+{"firstName":"Brody","lastName":"Dentinger","SIN":123456781,"Email":"@bob@bob.ca","highSchoolGrade":80,"admissionTestScore":90,"campusLocation":"New Brunswick","programName":"Software Engineering"}
+{"firstName":"Brody","lastName":"Dentinger","SIN":123456123,"Email":"bob@bob.ca","highSchoolGrade":90,"admissionTestScore":100,"campusLocation":"Manitoba","programName":"Environmental Science"}

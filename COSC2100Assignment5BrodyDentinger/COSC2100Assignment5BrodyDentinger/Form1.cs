@@ -187,7 +187,12 @@ namespace COSC2100Assignment5BrodyDentinger
             // Else, Sin is able to be converted to a numeric value, so we can check for it's existence in the JSON file.
             else
             {
-                IsSinUnique(SINint);
+                if (!IsSinUnique(SINint))
+                {
+                    // return false
+                    isValid = false;
+                }
+
             }
 
             if (SinExistsInComboBox(SINstring) || SinExistsInDataGridView(SINstring))
@@ -757,37 +762,51 @@ namespace COSC2100Assignment5BrodyDentinger
          */
         private void deleteRecordButton_Click(object sender, EventArgs e)
         {
-
             // Check if a SIN is selected from the combo box.
             if (sinComboBox.SelectedIndex >= 0)
             {
                 // For each row in the student grid view.
                 foreach (DataGridViewRow row in studentGridView.Rows)
-                {   
+                {
                     // If the row has a matching SIN.
                     if (row.Cells[2].Value.ToString().Equals(sinComboBox.Text))
                     {
-                        // Delete the cooresponding row.
+                        
+                        // Get the SIN value for the student to be deleted.
+                        string sinToDelete = sinComboBox.Text;
+
+                        // Delete the corresponding row from the DataGridView.
                         studentGridView.Rows.Remove(row);
 
                         // Delete the SIN from the SIN combobox.
-                        sinComboBox.Items.Remove(sinComboBox.Text);
+                        sinComboBox.Items.Remove(sinToDelete);
 
-                        // Message that deletion was successful.
-                        MessageBox.Show("Record was deleted successfully.");
+                        // Find and remove the student from the studentObjectList.
+                        StudentClass studentToRemove = studentObjectList.Find(student => student.SIN.ToString() == sinToDelete);
+                        if (studentToRemove != null)
+                        {
+                            
+                            studentObjectList.Remove(studentToRemove);
+
+                            // Message that deletion was successful.
+                            MessageBox.Show("Record was deleted successfully.");
+                        }
+                        else
+                        {
+                            // Handle the case where the student was not found in the list.
+                            MessageBox.Show("Error: Student not found in the list.");
+                        }
 
                         // Break, because there will only ever be 1 of this SIN in the DGV.
                         break;
                     }
                 }
             }
-            // Message the user to select a SIN to be deleted if none is selected.
-            else 
+            // Else nothing in the combo box is selected. Provide a message to the user.
+            else
             {
-                MessageBox.Show("Please select a SIN from the drop down menu, then press delete.");
+                MessageBox.Show("Select a SIN from the combobox, then press delete.");
             }
-
-
         }
 
         /*
